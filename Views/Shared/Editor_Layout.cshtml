@@ -27,6 +27,30 @@
 
 </head>
 <body>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>This is the content of the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="closeModal()">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="closeModal()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container-fluid">
@@ -38,61 +62,81 @@
             <div class="collapse navbar-collapse"
                  id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page"
-                           href="#">File</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Edit</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
                            id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            View
+                            File
                         </a>
                         <ul class="dropdown-menu"
                             aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Another
-                                    action
-                                </a>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Something
-                                    else here
-                                </a>
-                            </li>
-                        </ul>
+                            <li"><a class="dropdown-item" ng-click="openModal()" href="#">New</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                           id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Project
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            Open
                         </a>
-                        <ul class="dropdown-menu"
-                            aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Another
-                                    action
-                                </a>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    Something
-                                    else here
-                                </a>
-                            </li>
-                        </ul>
                     </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            Something
+                            else here
+                        </a>
+                    </li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        View
+                    </a>
+                    <ul class="dropdown-menu"
+                        aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Another
+                                action
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Something
+                                else here
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"
+                       id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Project
+                    </a>
+                    <ul class="dropdown-menu"
+                        aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Another
+                                action
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Something
+                                else here
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 </ul>
                 <!-- Settings -->
                 <div class="settings-icon d-flex">
@@ -129,7 +173,7 @@
                         <div class="sub-content">
                             <div class="item-toggle-btn"><i class="icon-arrow-right"></i></div>
                             <div class="item-head-name"><i class="icon-folder-alt"></i>{{item.content}}</div>
-                            <div class="item-head-fav" ><i class="icon-plus" ng-click="addOrder(item)"></i></div>
+                            <div class="item-head-fav"><i class="icon-plus" ng-click="addOrder(item)"></i></div>
                         </div>
                         <!-- Eklenen yeni içerikleri göster -->
                         <div ng-repeat="subContent in item.orderItems" class="sub-content-item" ng-show="subContent.isActive">
@@ -166,7 +210,51 @@
         </div>
         <div id="slot-right" class="slot right">
             <ng-dock-panel title="Özellikler" id="ozellik">
-                
+
+                <div class="properties-item">
+
+                    <div class="properties-table">
+                        <table class="table table-dark table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Browse to URL</th>
+                                    <td><input type="text" name="url" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ID</th>
+                                    <td><input type="number" name="id" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Copy to Output Directory</th>
+                                    <td>
+                                        <select>
+                                            <option value="value">....</option>
+                                            <option value="value">text1</option>
+                                            <option value="value">text2</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Custom Tool</th>
+                                    <td><input type="text" name="tool" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Custom Tool Namespace</th>
+                                    <td><input type="text" name="namespace" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">File Name</th>
+                                    <td><input type="text" name="name" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Full Path</th>
+                                    <td><input type="text" name="path" value="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </ng-dock-panel>
         </div>
 

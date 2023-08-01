@@ -1,7 +1,13 @@
 ﻿var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ngMessages', 'ngAnimate']);
 
+app.controller('myController', function ($scope) {   
 
-app.controller('myController', function ($scope) {
+    $scope.openModal = function () {
+        $('#myModal').modal('show');
+    };
+    $scope.closeModal = function () {
+        $('#myModal').modal('hide');
+    };
 
     $scope.contentsItems = [
         { name: 'Web Service', content: 'Order', isActive: false, contents: [], orderItems: [] },
