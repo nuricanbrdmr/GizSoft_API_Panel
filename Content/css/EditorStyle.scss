@@ -1,0 +1,292 @@
+﻿/*@mixin Theme($theme, $colorBackground, $colorBackgroundLight) {*/
+//.#{$theme} {
+$colorBackground: #1E1E1E;
+$colorBackgroundLight: #2f2e2e;
+
+body {
+    background-color: $colorBackground !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    height: 40px;
+    background-color: $colorBackgroundLight;
+    border-bottom: 1px solid #4e4e4e;
+
+    img {
+        width: 20px;
+        border-radius: 6px;
+    }
+
+    .nav-item, .nav-link {
+        color: white !important;
+    }
+}
+
+.navbar-brand {
+    padding-top: 0px;
+}
+
+.nav-item {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background: #fff;
+    }
+}
+
+.settings-icon {
+    span {
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 20px;
+        }
+
+        img {
+            width: 26px;
+        }
+
+        &:hover {
+            background: #808080;
+        }
+    }
+}
+
+.btn {
+    padding: .175rem .5rem;
+}
+
+.DockInContainer {
+    display: flex;
+    flex: 1;
+
+    .slot {
+        color: white;
+        display: flex;
+
+        &.right {
+            .DockPanel {
+                border-left: 1px solid $colorBackgroundLight;
+            }
+        }
+
+        &.left {
+            .DockPanel {
+                border-right: 1px solid $colorBackgroundLight;
+
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+
+                .contents-item {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column; // Dikey düzenleme için "column" kullanın
+                    font-size: 12px;
+                    padding: 0px 8px;
+                    user-select: none;
+                    cursor: pointer;
+                    margin-bottom: 4px; // Dikey düzenleme arasında boşluk bırakmak için
+                    transition: transform 0.5s ease;
+
+                    &:hover {
+                        background-color: #494949;
+                        color: white;
+                    }
+
+                    &.active {
+
+                        .item-content {
+                            display: flex;
+                            flex-direction: column;
+                            margin: 3px 0px 3px 15px;
+                            font-size: 10px;
+
+                            &:hover {
+                                background-color: #414040e0;
+                            }
+
+                            .sub-content {
+                                display: flex;
+                            }
+                        }
+
+                        .item-head-name-wrapper .item-toggle-btn {
+                            padding-left: 2px;
+                            transform: rotate(90deg);
+                        }
+                    }
+                    // Açma/Kapama simgesi stilleri
+                    // Açılır menü içeriği stilleri
+                    .item-content {
+                        display: none;
+
+                        .sub-content {
+                            display: flex;
+
+                            .icon-plus {
+                                &:hover {
+                                    color: gold;
+                                }
+                            }
+                        }
+
+                        .sub-content-item {
+                            display: flex;
+                            align-items: center;
+                            margin: 3px 0px 3px 12px;
+                            font-size: 13px;
+                            border-radius: 10px;
+
+                            &:hover {
+                                background-color: #2b2b2b;
+                            }
+                        }
+
+                        .item-toggle-btn {
+                            margin-left: 4px;
+                            margin-right: 14px;
+                            padding-left: 3px;
+                            height: 16px;
+                            width: 16px;
+                            background-color: unset;
+                        }
+
+                        .item-head-name {
+                            font-size: 12px;
+                            line-height: 20px;
+                            padding-right: 4px;
+                            width: 161px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            .icon-folder-alt {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .item-head-fav {
+                            background-color: transparent;
+                            display: flex;
+                            align-items: center;
+                            width: 24px;
+                            height: 24px;
+
+                            .i {
+                                display: inline-flex;
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+
+
+                    .item-head-name-wrapper {
+                        display: flex;
+                        align-items: center;
+                        height: 24px;
+
+                        .item-toggle-btn {
+                            margin-left: 4px;
+                            margin-right: 14px;
+                            height: 16px;
+                            width: 16px;
+                            background-color: unset;
+                        }
+
+                        .item-head-name {
+                            font-size: 12px;
+                            line-height: 20px;
+                            padding-right: 4px;
+                            width: 175px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            .icon-folder-alt {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .item-head-fav {
+                            background-color: transparent;
+                            display: flex;
+                            align-items: center;
+                            width: 24px;
+                            height: 24px;
+
+                            .i {
+                                display: inline-flex;
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            .icon-plus:hover {
+                                color: #7160e8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slot-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+
+        .fiil {
+            flex: 1;
+            margin: 1px;
+        }
+    }
+
+    .DockPanel {
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+        background-color: $colorBackground;
+        padding: 1px;
+        border-top: 2px solid #7160e8;
+
+        .header {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            background-color: $colorBackgroundLight;
+            padding: 3px;
+
+            * {
+                padding: 5px;
+            }
+        }
+
+        span {
+            margin-right: 5px;
+            flex: 1;
+        }
+    }
+}
+    /*}*/
+    /*}
+*/
+    /*@include Theme('dark', $colorBackground:#1E1E1E, $colorBackgroundLight:#2f2e2e);
+*/

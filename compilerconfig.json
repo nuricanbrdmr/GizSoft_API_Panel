@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/css/style.css",
+    "inputFile": "Content/css/style.scss"
+  },
+  {
+    "outputFile": "Content/css/EditorStyle.css",
+    "inputFile": "Content/css/EditorStyle.scss"
+  }
+]
