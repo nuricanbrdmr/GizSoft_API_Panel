@@ -1,4 +1,5 @@
-﻿/*@mixin Theme($theme, $colorBackground, $colorBackgroundLight) {*/
+﻿@charset "UTF-8";
+/*@mixin Theme($theme, $colorBackground, $colorBackgroundLight) {*/
 body {
   background-color: #1E1E1E !important;
   width: 100%;
@@ -294,6 +295,227 @@ html {
 .DockInContainer .DockPanel span {
   margin-right: 5px;
   flex: 1;
+}
+
+#myModal .modal-dialog {
+  max-width: 80%;
+}
+#myModal .modal-content {
+  background-color: #242424;
+  color: #fafafa;
+}
+#myModal .modal-content .modal-header {
+  border-bottom: 0;
+}
+#myModal .modal-content .modal-header button {
+  background-color: #242424;
+  color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+#myModal .modal-content .modal-header button:hover {
+  background-color: #2f2d2d;
+  color: red;
+}
+#myModal .modal-content .modal-header button span {
+  font-size: 18px;
+}
+#myModal .modal-content .modal-body {
+  display: flex;
+  justify-content: space-between;
+}
+#myModal .modal-content .modal-body .project-type {
+  width: 50%;
+  height: 450px; /* İhtiyaca göre ayarlayın */
+  overflow-y: auto;
+  /* Scroll çubuğunu özelleştir */
+  /* Scroll çubuğunun kaydırılabilir kısmını özelleştir */
+}
+#myModal .modal-content .modal-body .project-type::-webkit-scrollbar {
+  width: 11px; /* Çubuğun genişliği */
+  background-color: #242424; /* Scroll arka plan rengi */
+}
+#myModal .modal-content .modal-body .project-type::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scroll çubuğunun rengi */
+  border-radius: 4px; /* Scroll çubuğunun köşelerini yuvarla */
+}
+#myModal .modal-content .modal-body .project-type ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+#myModal .modal-content .modal-body .project-type ul li.selected {
+  background-color: #3b3b3b;
+}
+#myModal .modal-content .modal-body .project-type ul li {
+  list-style: none;
+  padding: 5px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  margin-bottom: 5px;
+}
+#myModal .modal-content .modal-body .project-type ul li:hover {
+  background-color: #3b3b3b;
+}
+#myModal .modal-content .modal-body .project-type ul li .project-icon {
+  padding-right: 10px;
+  font-size: 28px;
+}
+#myModal .modal-content .modal-body .project-type ul li .project-content .content-name {
+  font-size: 13px;
+}
+#myModal .modal-content .modal-body .project-type ul li .project-content p {
+  margin-bottom: 5px;
+  margin-top: 1px;
+  padding-right: 4px;
+  font-size: 12px;
+  cursor: default;
+}
+#myModal .modal-content .modal-body .project-type ul li .project-content .content-platforms {
+  font-size: 12px;
+}
+#myModal .modal-content .modal-body .project-type ul li .project-content .content-platforms span {
+  background-color: #3d3d3d;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 12%;
+  text-align: center;
+}
+#myModal .modal-content .modal-body .project-fav-type {
+  width: 45%;
+}
+#myModal .modal-content .modal-body .project-fav-type ul {
+  list-style: none;
+  padding: 0;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li.selected {
+  background-color: #3b3b3b;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li {
+  list-style: none;
+  font-size: 15px;
+  display: flex;
+  margin-top: 4px;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li li.selected {
+  background-color: #3b3b3b;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li:hover {
+  background-color: #636363;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li .project-fav-content {
+  display: flex;
+  width: 97%;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 5px;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li .project-fav-content .fav-icon {
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li .project-fav-content .fav-icon i {
+  font-size: 17px;
+  margin-right: 10px;
+}
+#myModal .modal-content .modal-body .project-fav-type ul li .project-fav-content .fav-type {
+  background-color: #3d3d3d;
+  border: 1px solid black;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+}
+#myModal .modal-footer {
+  border-top: none;
+}
+
+#configureModal .modal-dialog {
+  max-width: 80%;
+}
+#configureModal .modal-content {
+  background-color: #242424;
+  color: #fafafa;
+}
+#configureModal .modal-content .modal-header {
+  border-bottom: 0;
+}
+#configureModal .modal-content .modal-header button {
+  background-color: #242424;
+  color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+#configureModal .modal-content .modal-header button:hover {
+  background-color: #2f2d2d;
+  color: red;
+}
+#configureModal .modal-content .modal-header button span {
+  font-size: 18px;
+}
+#configureModal .modal-body {
+  padding: 0;
+  padding-left: 1rem;
+}
+#configureModal .modal-body .content-header {
+  display: flex;
+  width: 45%;
+}
+#configureModal .modal-body .content-header .header-title {
+  width: 100%;
+  font-size: 18px;
+}
+#configureModal .modal-body .content-header .header-platforms {
+  width: 100%;
+}
+#configureModal .modal-body .content-header .header-platforms span {
+  background-color: #3d3d3d;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 13px;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+#configureModal .modal-body .content-input {
+  margin-top: 17px;
+  font-size: 14px;
+}
+#configureModal .modal-body .content-input table tr {
+  display: flex;
+  flex-direction: column;
+}
+#configureModal .modal-body .content-input table tr .input-name {
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+#configureModal .modal-body .content-input table tr input[type=text] {
+  width: 600px;
+  height: 22px;
+  background-color: #383838;
+  border: none;
+  color: white;
+  padding-left: 10px;
+}
+#configureModal .modal-footer {
+  border-top: none;
 }
 
 /*}*/

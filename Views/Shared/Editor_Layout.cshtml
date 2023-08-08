@@ -27,30 +27,106 @@
 
 </head>
 <body>
-    <!-- Modal -->
+    <!-- Modal New -->
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New Modal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeModal()">
+                    <h5 class="modal-title">Create a new project</h5>
+                    <button type="button" class="close" aria-label="Close" ng-click="closeModal('myModal')">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>This is the content of the modal.</p>
+
+                    <div class="project-type">
+                        Project Type
+                        <ul>
+                            <li ng-repeat="item in projectType" ng-click="showFavType(item)" ng-class="{ 'selected': item === selectedProject }">
+                                <div class="project-icon"><i ng-bind-html="item.icon"></i></div>
+                                <div class="project-content">
+                                    <div class="content-name">{{item.name}}</div>
+                                    <p>
+                                        {{item.description}}
+                                    </p>
+                                    <div class="content-platforms">
+                                        <span ng-repeat="platform in item.platforms">{{platform}}</span>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="project-fav-type">
+                        Favori Project Type
+                        <ul>
+                            <li ng-repeat="favItem in selectedFavType" ng-click="ClickFavItem(favItem)" ng-class="{ 'selected': favItem === selectedProjectFav }">
+                                <div class="project-fav-content">
+                                    <span class="fav-icon">
+                                        <i ng-bind-html="trustHtml(favItem.favIcon)"></i> <span class="fav-name">{{favItem.favName}}</span>
+                                    </span>
+                                    <span class="fav-type">{{favItem.favtype}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="closeModal()">Close</button>
-                    <button type="button" class="btn btn-primary" ng-click="closeModal()">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="closeModal('myModal')">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="openDifferentModal()" ng-disabled="!isNextButtonEnabled">Next</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal New End -->
+    <!-- Modal New Configure -->
+    <div id="configureModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Configure your new project</h5>
+                    <button type="button" class="close"  ng-click="closeModal('configureModal')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
+                    <div class="content-header" ng-if="selectedContentHeader">
+                        <div class="header-title">{{ selectedContentHeader.title }}</div>
+                        <div class="header-platforms">
+                            <span>{{ selectedContentHeader.platform }}</span>
+                        </div>
 
+                    </div>
 
+                    <div class="content-input">
+                        <table>
+                            <tr>
+                                <td class="input-name">Project Name</td>
+                                <td><input type="text" name="name" value="" /></td>
+                            </tr>
+                            <tr>
+                                <td class="input-name">Solution Name</td>
+                                <td><input type="text" name="solution" value="" /></td>
+                            </tr>
+                            <tr>
+                                <td class="input-name">Name</td>
+                                <td><input type="text" name="name2" value="" /></td>
+                            </tr>
+                        </table>
+                    </div>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="backModal()">Back</button>
+                    <button type="button" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal New Content End -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container-fluid">
