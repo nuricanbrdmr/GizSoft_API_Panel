@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
 </head>
-<body class="{{theme}}">
+<body  ng-class="theme">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
@@ -119,7 +119,7 @@
                 <div class="text-box">
                     <div class="text-box-content"
                          style="display: flex; align-items: center;">
-                        <i class='bx bx-user' style='color:#0a0909'></i>
+                        <i class='bx bx-user'></i>
                         GizSoft API
                     </div>
                 </div>
@@ -138,14 +138,14 @@
                 <!-- Loglar -->
                 <div class="menu-link" ng-click="showContent('Loglar')" data-target="log">
                     <span>
-                        <i class='bx bx-book-open' style='color:#0a0909'></i>
+                        <i class='bx bx-book-open'></i>
                         <div class="text nav-text">Loglar</div>
                     </span>
                 </div>
                 <!-- Apiler -->
                 <div class="menu-link" ng-click="showContent('Apiler')" data-target="api">
                     <span>
-                        <i class='bx bx-directions' style='color:#0a0909'></i>
+                        <i class='bx bx-directions'></i>
                         <div class="text nav-text">Apiler</div>
                     </span>
                 </div>
@@ -185,6 +185,11 @@
                     </span>
                 </div>
 
+                <div class="menu-link-toggle">
+                    <span class="toggle-theme" ng-click="toggleTheme()">
+                        <i class='bx' ng-class="{'bxs-toggle-left': theme === 'light', 'bxs-toggle-right': theme === 'dark'}"></i>
+                    </span>
+                </div>
             </div>
             <div class="menu-details">
                 <div class="menu-details-wrapper">

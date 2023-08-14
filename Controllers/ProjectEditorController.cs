@@ -13,5 +13,10 @@ namespace API_Admin_Panel.Controllers
         {
             return View();
         }
+
+        public ActionResult Order()
+        {
+            return View();
+        }
     }
 }

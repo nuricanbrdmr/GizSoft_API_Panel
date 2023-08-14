@@ -206,6 +206,8 @@
     <Content Include="Views\Shared\Editor_Layout.cshtml" />
     <Content Include="Views\ProjectEditor\Index.cshtml" />
     <Content Include="Views\Modal\DockInContainer.cshtml" />
+    <Content Include="Views\ProjectEditor\Order.cshtml" />
+    <Content Include="Views\ProjectEditor\titleNavbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

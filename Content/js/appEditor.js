@@ -1,6 +1,7 @@
 ﻿var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ngMessages', 'ngAnimate']);
 
 app.controller('myController', function ($scope, $sce) {   
+ 
     //Modal Code
     $scope.openModal = function () {
         $('#myModal').modal('show');
@@ -106,9 +107,6 @@ app.controller('myController', function ($scope, $sce) {
         }
         $scope.selectedFavType = item.favTypeList;
     };
-
-   
-
     // Modal End Code
 
     $scope.contentsItems = [
@@ -116,10 +114,18 @@ app.controller('myController', function ($scope, $sce) {
         { name: 'Windows Service', content: 'Service', isActive: false, contents: [], orderItems: [] },
     ];
 
-
+    // Toggle functions
     $scope.toggleItem = function (item) {
         item.isActive = !item.isActive;
     };
+    $scope.toggleItems = function (orderItems) {
+        // isActive değerini false yaparak alt içeriği gizleyin
+        angular.forEach(orderItems, function (subContent) {
+            subContent.isActive = !subContent.isActive;
+        });
+    };
+    // Toggle functions end
+
 
     $scope.addNewItemContent = function (item) {
         var newItemContent = {
@@ -132,35 +138,38 @@ app.controller('myController', function ($scope, $sce) {
     };
 
     // Yeni fonksiyon: İç içe içerikleri eklemek için
-    $scope.addOrder = function (item) {
+    $scope.toggleSubItemMenu = function (event, content) {
+        if (content.content == "order") {
+            content.showSubItemMenu = !content.showSubItemMenu;
+        } else {
+            content.showSubItemMenu = !content.showSubItemMenu;
+        }
+
+    };
+    $scope.addOrder = function (item, type) {
         var newItem = {
-            name: 'New sub Item',
-            content: 'New sub Item Content',
+            name: type,
+            content: 'New Sub Item Content',
+            type: type,
             isActive: true,
             contents: [],
         }
         item.orderItems.push(newItem);
+        item.showSubItemMenu = false;
     }
-   
-    $scope.addSubItemContent = function (parentContent) {
+
+    $scope.addSubItemContent = function (parentContent, type) {   
         var newSubItemContent = {
-            name: 'New Sub Item',
+            name: type,
             content: 'New Sub Item Content',
+            type: type,
             isActive: true,
         };
-        console.log(parentContent);
         parentContent.contents.push(newSubItemContent);
+        parentContent.showSubItemMenu = false;
+
     };
 
-    //$scope.addNewItemContent = function (index) {
-    //    // Yeni bir contentsItem nesnesi oluştur ve contentsItems dizisine ekle
-    //    var newItemContent = {
-    //        name: 'New Item',
-    //        content: 'New Item Content',
-    //        isActive: false,
-    //    };
-    //    $scope.contentsItems.splice(index + 1, 0, newItemContent);
-    //};
 });
 
 app.config(['$qProvider', function ($qProvider) {

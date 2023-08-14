@@ -247,9 +247,15 @@
 
                     <div class="item-content" ng-show="item.isActive">
                         <div class="sub-content">
-                            <div class="item-toggle-btn"><i class="icon-arrow-right"></i></div>
-                            <div class="item-head-name"><i class="icon-folder-alt"></i>{{item.content}}</div>
-                            <div class="item-head-fav"><i class="icon-plus" ng-click="addOrder(item)"></i></div>
+                            <div class="item-toggle-btn" ng-click="toggleItems(item.orderItems)"><i class="icon-arrow-right"></i></div>
+                            <div class="item-head-name" > <i class="icon-folder-alt"></i>{{item.content}}</div>                            
+                            <div class="item-head-fav">
+                                <i class="icon-plus" ng-click="toggleSubItemMenu($event, item)"></i>
+                                <div class="sub-item-menu" ng-show="item.showSubItemMenu">
+                                    <div ng-click="addOrder(item, 'POST')">Create POST</div>
+                                    <div ng-click="addOrder(item, 'GET')">Create GET</div>
+                                </div>
+                            </div>                        
                         </div>
                         <!-- Eklenen yeni içerikleri göster -->
                         <div ng-repeat="subContent in item.orderItems" class="sub-content-item" ng-show="subContent.isActive">
@@ -260,9 +266,15 @@
                     <!-- Eklenen yeni içerikleri göster -->
                     <div ng-repeat="content in item.contents" class="item-content" ng-show="content.isActive">
                         <div class="sub-content">
-                            <div class="item-toggle-btn" ng-click="toggleItem(content)"><i class="icon-arrow-right"></i></div>
-                            <div class="item-head-name"><i class="icon-folder-alt"></i>{{content.content}}</div>
-                            <div class="item-head-fav" ng-click="addSubItemContent(content)"><i class="icon-plus"></i></div>
+                            <div class="item-toggle-btn" ng-click="toggleItems(content.contents)"><i class="icon-arrow-right"></i></div>
+                            <div class="item-head-name" ><i class="icon-folder-alt"></i>{{content.content}}</div>
+                            <div class="item-head-fav">
+                                <i class="icon-plus" ng-click="toggleSubItemMenu($event, content)"></i>
+                                <div class="sub-item-menu" ng-show="content.showSubItemMenu">
+                                    <div ng-click="addSubItemContent(content, 'POST')">Create POST</div>
+                                    <div ng-click="addSubItemContent(content, 'GET')">Create GET</div>
+                                </div>
+                            </div>
                         </div>
                         <!-- Eklenen yeni içerikleri göster -->
                         <div ng-repeat="subContent in content.contents" class="sub-content-item" ng-show="subContent.isActive">
@@ -270,13 +282,14 @@
                             <div class="item-head-name">{{subContent.name}}</div>
                         </div>
                     </div>
+
                 </div>
 
             </ng-dock-panel>
         </div>
         <div class="slot-container">
             <div class="slot top">
-                2
+                @Html.Partial("titleNavbar")
             </div>
             <div class="slot fiil">
                 @RenderBody()

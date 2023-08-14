@@ -80,6 +80,10 @@ app.controller("rootController", function ($rootScope, $scope, $http, $sce, $win
     $scope.theme = "light";
     console.log($scope.theme)
 
+    $scope.toggleTheme = function () {
+        $scope.theme = $scope.theme === 'light' ? 'dark' : 'light';
+    };
+
     BuildRoot($rootScope, $http, $sce, $window);
     $rootScope.isAdmin = true
 

@@ -2,6 +2,10 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
 /* Sidebar */
 /* navbar */
+body {
+  overflow: hidden;
+}
+
 .light {
   /* Pane */
 }
@@ -53,6 +57,7 @@
   display: inline-flex;
   width: 16px;
   height: 16px;
+  color: black;
 }
 .light .sidebar .menu-bar .menu .menu-link span .text {
   text-overflow: ellipsis;
@@ -62,6 +67,35 @@
   font-weight: 600;
   max-width: 80px;
   user-select: none;
+}
+.light .sidebar .menu-bar .menu .menu-link-toggle {
+  width: 72px;
+  height: 52px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 4px 4px 0px 4px;
+}
+.light .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme {
+  font-size: 35px;
+}
+.light .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme i {
+  display: inline-flex;
+  width: 35px;
+  height: 35px;
+  color: black;
+}
+.light .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme i:hover {
+  color: #dbd7d7;
 }
 .light .sidebar header {
   position: relative;
@@ -113,6 +147,9 @@
 .light .sidebar header.image-text .text-box-content {
   display: flex;
   align-items: center;
+}
+.light .sidebar header.image-text .text-box-content i {
+  color: black;
 }
 .light .sidebar .menu-details {
   box-shadow: inset -1px 0 0 #f9f9f9;
@@ -308,8 +345,9 @@
 }
 .light .pane-container .pane {
   width: 100%;
-  height: 898px;
+  height: 920px;
   position: absolute;
+  background-color: #fff;
   left: 350px;
   display: flex;
   min-width: 0;
@@ -372,6 +410,10 @@
   cursor: pointer;
 }
 
+body {
+  overflow: hidden;
+}
+
 .dark {
   /* Pane */
 }
@@ -423,6 +465,7 @@
   display: inline-flex;
   width: 16px;
   height: 16px;
+  color: white;
 }
 .dark .sidebar .menu-bar .menu .menu-link span .text {
   text-overflow: ellipsis;
@@ -432,6 +475,35 @@
   font-weight: 600;
   max-width: 80px;
   user-select: none;
+}
+.dark .sidebar .menu-bar .menu .menu-link-toggle {
+  width: 72px;
+  height: 52px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 4px 4px 0px 4px;
+}
+.dark .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme {
+  font-size: 35px;
+}
+.dark .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme i {
+  display: inline-flex;
+  width: 35px;
+  height: 35px;
+  color: white;
+}
+.dark .sidebar .menu-bar .menu .menu-link-toggle .toggle-theme i:hover {
+  color: cornflowerblue;
 }
 .dark .sidebar header {
   position: relative;
@@ -483,6 +555,9 @@
 .dark .sidebar header.image-text .text-box-content {
   display: flex;
   align-items: center;
+}
+.dark .sidebar header.image-text .text-box-content i {
+  color: white;
 }
 .dark .sidebar .menu-details {
   box-shadow: inset -1px 0 0 #6b6b6b;
@@ -678,8 +753,9 @@
 }
 .dark .pane-container .pane {
   width: 100%;
-  height: 898px;
+  height: 920px;
   position: absolute;
+  background-color: darkgray;
   left: 350px;
   display: flex;
   min-width: 0;
