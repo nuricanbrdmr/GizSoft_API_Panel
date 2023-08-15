@@ -1,7 +1,7 @@
 ﻿var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ngMessages', 'ngAnimate']);
 
-app.controller('myController', function ($scope, $sce) {   
- 
+app.controller('myController', function ($scope, $sce, $timeout) {   
+
     //Modal Code
     $scope.openModal = function () {
         $('#myModal').modal('show');
@@ -39,6 +39,30 @@ app.controller('myController', function ($scope, $sce) {
         $scope.selectedProjectFav = favItem;
     };
 
+    // Table Details Tablosuna yeni row ekleme
+    $scope.tableRows = [
+        {
+            schema: '',
+            name: '',
+            jsonPath: '',
+            error: false,
+            bulk: false,
+            onlyOnce: false
+        }
+    ];
+
+    $scope.addRow = function () {
+        $scope.tableRows.push({
+            schema: '',
+            name: '',
+            jsonPath: '',
+            error: false,
+            bulk: false,
+            onlyOnce: false
+        });
+    };
+
+    //Table Details Tablosuna yeni row ekleme son
 
     $scope.projectType = [
         {

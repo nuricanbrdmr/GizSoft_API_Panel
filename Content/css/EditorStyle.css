@@ -290,9 +290,56 @@ html {
 .DockInContainer .slot.left .DockPanel .contents-item .item-head-name-wrapper .item-head-fav .icon-plus:hover {
   color: #7160e8;
 }
+.DockInContainer .slot.fiil {
+  display: flex;
+  flex-direction: column;
+}
+.DockInContainer .slot.fiil .file-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.DockInContainer .slot.fiil .file-settings .folder-src {
+  margin-left: 7px;
+  font-size: 12px;
+  padding: 7px;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding-right: 8px;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn span {
+  margin-right: 2px;
+  padding: 9px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn .save {
+  color: #7160e8;
+  background-color: #353535;
+  border-radius: 5px;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn .save:hover {
+  color: #9e90ff;
+  background-color: #515151;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn .delete {
+  color: #b30000;
+  background-color: #353535;
+  border-radius: 5px;
+}
+.DockInContainer .slot.fiil .file-settings .saveBtn-deleteBtn .delete:hover {
+  color: red;
+  background-color: #515151;
+}
 .DockInContainer .slot.fiil .main {
   display: flex;
-  width: 50%;
+  width: 100%;
+  height: 100%;
 }
 .DockInContainer .slot.fiil .main .table-main {
   border-right: 1px solid gray;
@@ -319,41 +366,140 @@ html {
 .DockInContainer .slot.fiil .main .table-main .sample-button .button-smp:hover {
   background-color: #6c63ab;
 }
-.DockInContainer .slot.fiil .main .table-main .table-content {
+.DockInContainer .slot.fiil .main .table-main .content-group {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content {
+  position: relative;
+  box-sizing: border-box;
+  padding: 8px;
+  display: flex;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box {
+  display: flex;
+  width: 100%;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .url-select select {
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  background-color: #212529;
+  color: #d6d6d6;
+  outline: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .url-select select .styled-option {
+  width: 150px;
+  height: 30px;
+  background-color: lightgray;
+  color: black;
   font-size: 16px;
 }
-.DockInContainer .slot.fiil .main .table-main .table-content table {
-  margin-bottom: 10px;
-}
-.DockInContainer .slot.fiil .main .table-main .table-content table tr {
-  font-size: 14px;
-}
-.DockInContainer .slot.fiil .main .table-main .table-content table tr td ._select {
-  width: 100%;
-  height: 30px;
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .line-main {
   background-color: #212529;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .line-main .line {
+  min-height: 24px;
+  border: 1px solid;
+  border-color: #4f4f4f;
+  margin: 8px 0;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .url-input {
+  width: 100%;
+}
+.DockInContainer .slot.fiil .main .table-main .content-group .header-content .main-url-box .url-input input {
+  height: 40px;
+  border-radius: 0 4px 4px 0;
   border: none;
+  width: 100%;
+  background-color: #212529;
+  color: #d6d6d6;
+  padding-left: 10px;
+  font-size: 14px;
+  outline: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab {
+  padding: 50px 0px 8px 0px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab ul {
+  padding-bottom: 0px;
+  border-color: #939393;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab ul li:hover {
+  background-color: #393939;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab ul li .nav-link.active {
+  color: black;
+  font-weight: 500;
+  background-color: #a1a1a1;
+  border: none;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab ul li button {
+  color: #bdbdbd;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content {
+  font-size: 16px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane {
+  height: 630px;
+  /*width: 100%;*/
+  overflow-x: auto;
+  overflow-y: auto;
+  /* Scroll çubuğunu özelleştir */
+  /* Scroll çubuğunun kaydırılabilir kısmını özelleştir */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane::-webkit-scrollbar {
+  height: 11px;
+  width: 8px;
+  background-color: #242424; /* Scroll arka plan rengi */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scroll çubuğunun rengi */
+  border-radius: 4px; /* Scroll çubuğunun köşelerini yuvarla */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table {
+  margin-bottom: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead tr th {
+  text-align: center;
+  font-size: 14px;
   color: #d6d6d6;
 }
-.DockInContainer .slot.fiil .main .table-main .table-content table tr td:last-child {
-  padding: 0;
-  border-left-width: 1px;
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead tr .add-row {
+  background-color: #4b4b4b;
 }
-.DockInContainer .slot.fiil .main .table-main .table-content table tr td:last-child input {
-  width: 100%;
-  height: 41px;
-  background-color: #212529;
-  border: none;
-  color: white;
-  padding-left: 6px;
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead tr .add-row i {
+  font-size: 15px;
+  font-weight: 600;
 }
-.DockInContainer .slot.fiil .main .table-main .table-content table tr td:last-child textarea {
-  width: 100%;
-  height: 100%;
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead tr .add-row:hover {
+  background-color: #5f5d5d;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody {
+  overflow-y: auto;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td {
+  text-align: center;
+  font-size: 13px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td input[type=text] {
+  height: 30px;
   background-color: #212529;
-  border: none;
-  color: white;
-  padding-left: 6px;
+  color: #d6d6d6;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td .form-check {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  align-items: center;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .first-input input {
+  width: 85px;
 }
 .DockInContainer .slot.fiil .main .table-json {
   padding: 10px;
