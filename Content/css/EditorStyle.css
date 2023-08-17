@@ -432,19 +432,21 @@ html {
   background-color: #393939;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab ul li .nav-link.active {
-  color: black;
+  color: #fff;
   font-weight: 500;
-  background-color: #a1a1a1;
-  border: none;
+  background-color: rgb(89, 88, 88);
+  border: 0px;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab ul li button {
   color: #bdbdbd;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content {
   font-size: 16px;
+  overflow: auto;
+  width: 750px;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane {
-  height: 630px;
+  max-height: 630px;
   /*width: 100%;*/
   overflow-x: auto;
   overflow-y: auto;
@@ -462,6 +464,9 @@ html {
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table {
   margin-bottom: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead {
+  border-style: hidden;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table thead tr th {
   text-align: center;
@@ -481,16 +486,39 @@ html {
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody {
   overflow-y: auto;
 }
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr {
+  border-style: hidden;
+  /*.description-textarea {
+      position: relative;
+      width: 300px;*/ /* İstediğiniz genişliği burada belirleyebilirsiniz */
+  /*height: 100px;*/ /* İstediğiniz yüksekliği burada belirleyebilirsiniz */
+  /*textarea {
+          width: 100%;
+          height: 100%;
+          background-color: #4d4d4d;
+          color: #d6d6d6;
+          border: 0;
+          border-radius: 4px;
+          box-sizing: border-box;
+          resize: none;*/ /* Metni sadece yatay yönde boyutlandırabilirsiniz */
+  /*outline: 0;
+          padding-left: 5px;
+      }
+  }*/
+}
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td {
   text-align: center;
   font-size: 13px;
+  width: 60px;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td input[type=text] {
   height: 30px;
-  background-color: #212529;
+  background-color: #4d4d4d;
   color: #d6d6d6;
-  border: 1px solid #bdbdbd;
-  border-radius: 6px;
+  border: none;
+  border-radius: 4px;
+  outline: 0;
+  padding-left: 5px;
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr td .form-check {
   display: flex;
@@ -500,6 +528,326 @@ html {
 }
 .DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .first-input input {
   width: 85px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .status-input {
+  text-align: center;
+  width: 35%;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .status-input input {
+  width: 100% !important auto;
+  width: 200px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .json-textarea {
+  position: relative;
+  width: 300px; /* İstediğiniz genişliği burada belirleyebilirsiniz */
+  height: 150px; /* İstediğiniz yüksekliği burada belirleyebilirsiniz */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .json-textarea textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #4d4d4d;
+  color: #d6d6d6;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none; /* Metni sadece yatay yönde boyutlandırabilirsiniz */
+  outline: 0;
+  padding-left: 8px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn button {
+  margin-right: 5px;
+  background-color: transparent;
+  color: white;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn .btn-primary {
+  border-color: #9f9a9a;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn .btn-primary:hover {
+  background-color: rgba(139, 139, 139, 0.7803921569);
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn .btn-warning {
+  border-color: #8c9eff;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane table tbody tr .response-btn .btn-warning:hover {
+  background-color: #707cbd;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main {
+  background-color: #212529;
+  padding: 10px;
+  margin: 8px 0 1px 0px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 5px 6px #353535;
+  width: 119%;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  /*.select-btn.open ~ .list-items {
+      display: block;
+  }*/
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .container-filter {
+  position: relative;
+  max-width: 180px;
+  width: 100%;
+  height: 25px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #212529;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .select-btn .btn-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .select-btn .arrow-dwn {
+  height: 18px;
+  width: 18px;
+  font-size: 14px;
+  color: white;
+  border-radius: 50%;
+  background-color: #6e93f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .select-btn.open .arrow-dwn {
+  transform: rotate(-180deg);
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items.open-list {
+  display: block;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items {
+  position: relative;
+  margin-top: 8px;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: antiquewhite;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0 15px;
+  border-radius: 8px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item:hover {
+  background-color: #e7edfe;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  margin-right: 12px;
+  border: 1.5px solid #c0c0c0;
+  transition: all 0.3s ease-in-out;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item .checkbox .check-icon {
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  font-size: 14px;
+  color: #333;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item .item-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item.checked .checkbox {
+  background-color: #6e93f7;
+  border-color: #4070f4;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header .filter-main .list-items .item.checked .check-icon {
+  color: white;
+  transform: scale(1);
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table {
+  margin-bottom: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table thead tr th {
+  text-align: center;
+  font-size: 14px;
+  color: #d6d6d6;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table thead tr .add-row {
+  background-color: #4b4b4b;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table thead tr .add-row i {
+  font-size: 15px;
+  font-weight: 600;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table thead tr .add-row:hover {
+  background-color: #5f5d5d;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody {
+  overflow-y: auto;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr td {
+  text-align: center;
+  font-size: 13px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr td input[type=text] {
+  height: 30px;
+  background-color: #4d4d4d;
+  color: #d6d6d6;
+  border: 0;
+  border-radius: 4px;
+  outline: 0;
+  padding-left: 5px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr td .form-check {
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  align-items: center;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .first-input input {
+  width: 110px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .status-input {
+  text-align: center;
+  width: 35%;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .status-input input {
+  width: 100% !important;
+  width: 200px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .description-textarea {
+  position: relative;
+  width: 300px; /* İstediğiniz genişliği burada belirleyebilirsiniz */
+  height: 100px; /* İstediğiniz yüksekliği burada belirleyebilirsiniz */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .description-textarea textarea {
+  width: 100%;
+  height: 100%;
+  background-color: #4d4d4d;
+  color: #d6d6d6;
+  border: 0;
+  border-radius: 4px;
+  outline: 0;
+  padding-left: 5px;
+  box-sizing: border-box;
+  resize: none; /* Metni sadece yatay yönde boyutlandırabilirsiniz */
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn button {
+  margin-right: 5px;
+  background-color: transparent;
+  color: white;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn .btn-primary {
+  border-color: #9f9a9a;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn .btn-primary:hover {
+  background-color: rgba(139, 139, 139, 0.7803921569);
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn .btn-warning {
+  border-color: #8c9eff;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .table-header table tbody tr .response-btn .btn-warning:hover {
+  background-color: #707cbd;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses {
+  padding-top: 30px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr:hover {
+  --bs-table-accent-bg: none;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button {
+  text-align: end;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button .back-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 20px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button .back-icon .btn-warning {
+  margin-right: 5px;
+  background-color: transparent;
+  color: white;
+  border-color: #8c9eff;
+  width: 25%;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button .back-icon .btn-warning:hover {
+  background-color: #707cbd;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button .back-icon i {
+  margin-right: 10px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border: 1px solid #3b3b3b;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses table tbody tr .response-detail-button .back-icon i:hover {
+  background-color: #4b4b4b;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul {
+  list-style-type: none;
+  padding: 0;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  background-color: #212529;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px 0 rgb(0, 0, 0);
+  margin-bottom: 9px;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul li:hover {
+  background-color: #323539;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul li span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul li .responses-settings {
+  width: 50%;
+  display: flex;
+  font-size: 18px;
+  padding-left: 55px;
+  justify-content: center;
+  align-items: center;
+}
+.DockInContainer .slot.fiil .main .table-main .main-tab .tab-content .tab-pane .responses ul li .responses-settings i {
+  margin-right: 8px;
 }
 .DockInContainer .slot.fiil .main .table-json {
   padding: 10px;
