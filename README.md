@@ -1,2 +1,2 @@
 # API_Panel
-GizSoft API PAnel
+GizSoft API Panel Web sitesi tasarımı
