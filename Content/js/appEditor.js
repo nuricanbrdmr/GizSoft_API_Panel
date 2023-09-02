@@ -1,5 +1,7 @@
 ﻿var app = angular.module('app', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ngMessages', 'ngAnimate']);
-
+function redirectToOrder() {
+    window.location.href = "ProjectEditor/Order"; // Yeni sayfanın URL'sini buraya ekleyin
+}
 app.controller('myController', function ($scope, $sce, $timeout) {   
 
     // Filter Button
@@ -69,6 +71,21 @@ app.controller('myController', function ($scope, $sce, $timeout) {
     };
 
     // Table Details Tablosuna yeni row ekleme
+
+    
+    $scope.responseDataDetails = [];
+    $scope.messageParametersShow = false;
+    $scope.responseDetail = function (data) {
+        $scope.responseDataDetails = data;
+        $scope.messageParametersShow = true;
+        // Responses detaylarını getiren tabloya geçiş
+    };
+    $scope.backResponse = function () {
+        $scope.messageParametersShow = false;
+    };
+
+    // Order Data kodu
+
 
     $scope.Data = {
         "ID": 16,
@@ -1237,6 +1254,7 @@ app.controller('myController', function ($scope, $sce, $timeout) {
         "ResultsonPath": null,
         "ResultsonKey": null
     };
+
     $scope.Data.RequestParameters = [
         {
             "ResponseTypeID": 2,
@@ -1304,44 +1322,20 @@ app.controller('myController', function ($scope, $sce, $timeout) {
             ]
         }
     ];
-    $scope.responseDataDetails = [];
-    $scope.messageParametersShow = false;
-    $scope.responseDetail = function (data) {
-        $scope.responseDataDetails = data;
-        $scope.messageParametersShow = true;
-        // Responses detaylarını getiren tabloya geçiş
-    };
-    $scope.backResponse = function () {
-        $scope.messageParametersShow = false;
-    };
 
-    const container = document.getElementById("jsoneditor")
+    //const container = document.getElementById("jsoneditor")
 
-    const options = {
-        mode: 'code',
-        modes: ['code', 'tree'],
-    }
-    console.log('options', options);
     //const options = {
-    //    'preview',
-    //    ajv: this.props.ajv,
-    //    indentation: this.props.indentation,
-    //    mainMenuBar: this.props.mainMenuBar !== false, // true by defined
-    //    navigationBar: this.props.navigationBar !== false,
-    //    statusBar: this.props.statusBar !== false,
-    //    popupAnchor: document.body,
-
-
-
-
-
-    //    onClassName: this.props.onClassName
+    //    mode: 'code',
+    //    modes: ['code', 'tree'],
     //}
-    const editorJSON = new JSONEditor(container, options)
-    //const initialJson = {}
-    editorJSON.set($scope.Data.SimpleJson)
-        //const updatedJson = editorJSON.get()
-    //Table Details Tablosuna yeni row ekleme son
+    //console.log('options', options);
+    //const editorJSON = new JSONEditor(container, options)
+    //editorJSON.set($scope.Data.SimpleJson)
+
+
+    // Order Data end
+
 
     $scope.projectType = [
         {
